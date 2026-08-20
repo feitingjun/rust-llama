@@ -48,9 +48,9 @@ impl<'a> LlamaSession<'a> {
     // 创建初始消息
     let mut msg = Vec::new();
     // 如果 think = false 关闭深度思考
-    // if !params.think {
-    //   msg.push(LlamaChatMessage::new(String::from("system"), String::from("/nothink")).unwrap());
-    // }
+    if !params.think {
+      msg.push(LlamaChatMessage::new(String::from("system"), String::from("/nothink")).unwrap());
+    }
     LlamaSession {
       ctx,
       llama,
